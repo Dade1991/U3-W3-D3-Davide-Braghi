@@ -11,7 +11,7 @@ const mainReducer = (state = initialState, action) => {
         ...state,
         favourites: {
           ...state.favourites,
-          content: [...state.favourites.content, state.payload],
+          content: [...state.favourites.content, action.payload],
         },
       }
     case `REMOVE_FROM_FAVOURITES`:
@@ -20,10 +20,10 @@ const mainReducer = (state = initialState, action) => {
         favourites: {
           ...state.favourites,
           content: state.favourites.content.filter((job) => {
-            if (job.id !== action.payload) {
-              return true
-            } else {
+            if (job._id === action.payload) {
               return false
+            } else {
+              return true
             }
           }),
         },
