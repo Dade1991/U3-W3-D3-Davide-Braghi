@@ -36,7 +36,7 @@ const FavouriteList = () => {
                       })
                     }}
                   >
-                    <i class="bi bi-trash3"></i>
+                    <i className="bi bi-trash3"></i>
                   </Button>
                 </div>
               </li>
